@@ -1,7 +1,7 @@
-name: cspc
-channels:
+name: cspc #название environment'а
+channels: #источник,откуда Conda может брать пакеты.
   - conda-forge
 dependencies:
   - python=3.11
-  - numpy
-  - pytest
+  - numpy #package 
+  - pytes #package
