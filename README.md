@@ -70,3 +70,27 @@ Running Snakemake again without changing the input files produced:
 "Nothing to be done (all requested files are present and up to date)."
 
 This demonstrates that Snakemake avoids unnecessary computations.
+
+
+## PW2 — Lab B: Numerical Optimization
+
+### Part 2A — Convex Function
+
+All three methods (Gradient Descent, Newton, and SLSQP)
+converged to x = 3, the minimum of f(x) = (x - 3)^2 + 1.
+
+### Part 2B — Non-Convex Function
+
+Gradient Descent and SLSQP converged to approximately
+x = -1.30084 from both starting points.
+
+Newton produced different stationary points:
+- From x0 = 0, Newton found x = 0.16994.
+  The second derivative is negative, so this is a local maximum.
+- From x0 = 2, Newton found x = 1.13090.
+  The second derivative is positive, so this is a local minimum.
+
+Conclusion:
+The methods do not always agree. Newton's method finds
+stationary points, which are not necessarily minima.
+The starting point can influence the result of optimization.
