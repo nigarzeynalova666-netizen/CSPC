@@ -94,3 +94,63 @@ Conclusion:
 The methods do not always agree. Newton's method finds
 stationary points, which are not necessarily minima.
 The starting point can influence the result of optimization.
+
+### Part 3 — Chemistry 1: fit a reaction rate
+
+The fitted rate constant is k = 0.26176.
+
+The fitted exponential curve follows the measured concentration
+data closely. The result is close to the expected value of k = 0.25.
+
+The optimization was performed using scipy.optimize.minimize
+with the SLSQP method.
+
+### Part 4 — Chemistry 2: chemical equilibrium
+
+Studied the equilibrium reaction:
+
+H2 + I2 ⇌ 2HI
+
+The equilibrium extent was calculated using two numerical methods:
+- Newton's method (`scipy.optimize.newton`) for root-finding.
+- SLSQP (`scipy.optimize.minimize`) for minimizing the squared equilibrium imbalance.
+
+**Results:**
+- Newton: x = 0.66384767
+- SLSQP: x = 0.66384743
+- Difference: 2.39 × 10⁻⁷
+
+**Equilibrium composition:**
+- H2 = 0.33615 mol
+- I2 = 0.33615 mol
+- HI = 1.32770 molS
+
+Both methods produced nearly identical results.
+
+The amounts of H2, I2, and HI were plotted against the reaction extent, with the equilibrium position marked by a vertical line.
+
+Output: `equilibrium.png`
+
+### Part 5 (bonus) — Chemistry 3: titration equivalence point
+
+Analyzed titration data from `titration.csv` to determine the equivalence point.
+
+The numerical derivative of pH with respect to the volume of added base was calculated using `np.gradient()`.
+
+The maximum slope was identified using `np.argmax()`.
+
+**Results:**
+- Equivalence point volume: V = 50
+- Maximum slope: dpH/dV = 4.0
+
+Two plots were generated:
+- pH versus volume of added base, with the equivalence point marked.
+- dpH/dV versus volume of added base, with the maximum slope highlighted.
+
+Output: `titration.png`
+
+### Conclusion
+
+This lab demonstrated how numerical optimization and root-finding methods can be applied to mathematical and chemical problems.
+
+Newton's method and SLSQP produced consistent results for chemical equilibrium, while numerical differentiation allowed the equivalence point of a titration curve to be identified.
