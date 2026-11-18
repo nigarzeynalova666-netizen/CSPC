@@ -48,3 +48,25 @@ approximately 0.785 m.
 
 This shows that integration suppresses noise and can recover the original
 position quite closely even from noisy acceleration data.
+
+
+## PW1 — Lab B: Data Visualization and Automation
+
+### Data analysis
+Loaded observed decay data from decay_observed.csv and compared it
+with the analytical exponential decay model:
+
+N(t) = N0 * exp(-0.3 * t)
+
+The observed data were plotted as scatter points, while the
+analytical model was plotted as a continuous curve.
+
+### Snakemake automation
+Created a Snakefile to automate the generation of figure.png.
+
+After deleting figure.png, Snakemake successfully regenerated it.
+
+Running Snakemake again without changing the input files produced:
+"Nothing to be done (all requested files are present and up to date)."
+
+This demonstrates that Snakemake avoids unnecessary computations.
